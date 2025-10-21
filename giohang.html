@@ -66,7 +66,7 @@
               <a class="nav-link" href="index.html">TRANG CHỦ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="sanpham.html">SẢN PHẨM</a>
+              <a class="nav-link" href="sanpham.html">SẢN PHẨM</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="tacgia.html">TÁC GIẢ</a>
@@ -99,9 +99,9 @@
                   <a
                     class="dropdown-item fw-semibold"
                     href="lichsu.html"
-                    style="color: #f355a4;"
+                    style="color: #f355a4"
                   >
-                     Lịch sử mua hàng
+                    Lịch sử mua hàng
                   </a>
                 </li>
               </ul>
@@ -139,7 +139,7 @@
         <h2>🛒 Giỏ Hàng <span>(4 sản phẩm)</span></h2>
         <!-- Checkbox chọn tất cả -->
         <div class="check-all">
-          <input type="checkbox" id="checkAll" class="form-check-input p-2"/>
+          <input type="checkbox" id="checkAll" class="form-check-input p-2" />
           <label for="checkAll">Chọn tất cả</label>
         </div>
 
@@ -351,7 +351,7 @@
     <!-- Footer Gallery -->
     <section class="footer-gallery text-center py-4 text-white">
       <div class="container">
-        <h3 class="mb-4">Truyện đề xuất</h3>
+        <h1 class="mb-4 text-dark">Truyện đề xuất</h1>
         <div class="row g-4 justify-content-center">
           <div class="col-md-3">
             <img
@@ -376,9 +376,8 @@
           </div>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
-    
 
     <!-- nhận thông tin -->
     <section id="subscribe" class="py-5 mb-2">
@@ -487,31 +486,27 @@
     </footer>
 
     <script>
-  // Lấy phần tử checkbox chính
-  const checkAll = document.getElementById('checkAll');
-  // Lấy tất cả checkbox của sản phẩm
-  const itemCheckboxes = document.querySelectorAll('.form-check-input');
+      // Lấy phần tử checkbox chính
+      const checkAll = document.getElementById("checkAll");
+      // Lấy tất cả checkbox của sản phẩm
+      const itemCheckboxes = document.querySelectorAll(".form-check-input");
 
-  // Khi bấm "chọn tất cả"
-  checkAll.addEventListener('change', () => {
-    itemCheckboxes.forEach(cb => {
-      cb.checked = checkAll.checked;
-    });
-  });
+      // Khi bấm "chọn tất cả"
+      checkAll.addEventListener("change", () => {
+        itemCheckboxes.forEach((cb) => {
+          cb.checked = checkAll.checked;
+        });
+      });
 
-  // Khi bỏ chọn từng checkbox con → cập nhật lại trạng thái của "chọn tất cả"
-  itemCheckboxes.forEach(cb => {
-    cb.addEventListener('change', () => {
-      const allChecked = Array.from(itemCheckboxes).every(item => item.checked);
-      checkAll.checked = allChecked;
-    });
-  });
-</script>
-
+      // Khi bỏ chọn từng checkbox con → cập nhật lại trạng thái của "chọn tất cả"
+      itemCheckboxes.forEach((cb) => {
+        cb.addEventListener("change", () => {
+          const allChecked = Array.from(itemCheckboxes).every(
+            (item) => item.checked
+          );
+          checkAll.checked = allChecked;
+        });
+      });
+    </script>
   </body>
 </html>
-
-
-
-
-
