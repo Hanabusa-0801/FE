@@ -1,8 +1,9 @@
-// Khởi tạo AOS
+
 AOS.init({
-  duration: 1000, // thời gian hiệu ứng
-  once: true,    // nếu true thì chỉ chạy 1 lần
+  duration: 1000, // thời gian chạy hiệu ứng (ms)
+  once: false     // chạy lại khi cuộn lại
 });
+
 
 (function() {
   const items = document.querySelectorAll('.slide-item'); 
