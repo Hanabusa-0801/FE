@@ -16,7 +16,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    
   </head>
 
   <body>
@@ -98,9 +97,9 @@
                   <a
                     class="dropdown-item fw-semibold"
                     href="lichsu.html"
-                    style="color: #f355a4;"
+                    style="color: #f355a4"
                   >
-                     Lịch sử mua hàng
+                    Lịch sử mua hàng
                   </a>
                 </li>
               </ul>
@@ -267,9 +266,14 @@
               <h2>Trích dẫn nổi bật</h2>
               <blockquote data-aos="fade-up">
                 <!-- carousel trích dẫn -->
-                <div id="carouselExample" class="carousel slide">
+                <div
+                  id="carouselExample"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                  data-bs-interval="5000"
+                >
                   <div class="carousel-inner">
-                    <div class="carousel-item active" style="min-height: 200px;">
+                    <div class="carousel-item active" style="min-height: 200px">
                       <!-- nội dung -->
                       <img
                         width="15%"
@@ -292,7 +296,7 @@
                       <div class="author-name">Albert Einstein</div>
                       <!-- hết nội dung -->
                     </div>
-                    <div class="carousel-item" style="min-height: 200px;">
+                    <div class="carousel-item" style="min-height: 200px">
                       <!-- nội dung -->
                       <img
                         width="15%"
@@ -337,25 +341,7 @@
                     type="button"
                     data-bs-target="#carouselExample"
                     data-bs-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExample"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
+                  ></button>
                 </div>
               </blockquote>
             </div>
@@ -496,7 +482,7 @@
     <!-- Footer Gallery -->
     <section class="footer-gallery text-center py-4 text-white">
       <div class="container">
-        <h3 class="mb-4">Danh mục truyện nổi bật | Bán chạy</h3>
+        <h1 class="mb-4 text-dark">Truyện đề xuất</h1>
         <div class="row g-4 justify-content-center">
           <div class="col-md-3">
             <img
@@ -637,10 +623,7 @@
         });
       });
     </script>
-  <!-- AOS -->
+    <!-- AOS -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" /> -->
   </body>
 </html>
-
-
-
