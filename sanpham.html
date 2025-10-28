@@ -21,21 +21,34 @@
   <body>
     <!-- header -->
     <div
-      class="container-fluid top-bar d-flex justify-content-between bg-light border-bottom"
+      class="container-fluid top-bar d-flex justify-content-between bg-light border-bottom d-md-inline d-none"
     >
-      <div class="icon-navbar mt-md-2 my-3">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-youtube"></i></a>
-        <a href="#"><i class="bi bi-behance"></i></a>
-      </div>
-      <div class="user-links text-dark pt-2 pb-2 d-flex flex-wrap ms-auto">
-        <a href="dangnhap.html" type="button" class="nut m-2 d-none d-md-block"
-          ><i class="bi bi-person-fill"></i> Tài khoản</a
-        >
-        <a href="giohang.html" type="button" class="nut m-2 d-none d-md-block"
-          ><i class="bi bi-bag-fill"></i> Giỏ hàng</a
-        >
+      <div class="row">
+        <div class="col-4">
+          <div class="icon-navbar ">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+        <div class="col-5"></div>
+        <div class="col-3 d-flex me-auto">
+          <div class="user-links text-dark pt-2 pb-2 d-flex ms-auto">
+            <a
+              href="dangnhap.html"
+              type="button"
+              class="nut mx-2 d-none d-md-block"
+              ><i class="bi bi-person-fill"></i> Tài khoản</a
+            >
+            <a
+              href="giohang.html"
+              type="button"
+              class="nut mx-2 d-none d-md-block"
+              ><i class="bi bi-bag-fill"></i> Giỏ hàng</a
+            >
+          </div>
+        </div>
       </div>
     </div>
     <!-- Navbar -->
@@ -127,6 +140,25 @@
               🔍
             </button>
           </form>
+
+          <div
+      class="container-fluid top-bar d-flex justify-content-between bg-light border-bottom d-md-none d-block"
+    >
+      <div class="icon-navbar mt-md-2 my-3">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+        <a href="#"><i class="bi bi-behance"></i></a>
+      </div>
+      <div class="user-links text-dark pt-2 pb-2 d-flex flex-wrap ms-auto">
+        <a href="dangnhap.html" type="button" class="nut m-2 d-none d-md-block"
+          ><i class="bi bi-person-fill"></i> Tài khoản</a
+        >
+        <a href="giohang.html" type="button" class="nut m-2 d-none d-md-block"
+          ><i class="bi bi-bag-fill"></i> Giỏ hàng</a
+        >
+      </div>
+    </div>
         </div>
       </div>
     </nav>
@@ -189,7 +221,10 @@
         <!-- DANH MỤC NHANH -->
         <div class="mb-3 text-center">
           <h4 class="fw-bold mb-3"></h4>
-          <div class="d-flex flex-wrap justify-content-center gap-2">
+          <div
+            class="d-flex flex-wrap justify-content-center gap-2"
+            id="quick-menu"
+          >
             <button
               class="btn btn-outline-danger active"
               style="background-color: #f89ac9; color: black"
@@ -220,13 +255,13 @@
             <button class="btn btn-danger">
               <i class="bi bi-funnel"></i> Bộ lọc
             </button>
-            <button class="btn btn-light">
+            <button class="btn btn-light filter-toggle-btn">
               <i class="bi bi-box"></i> Sách mới
             </button>
-            <button class="btn btn-light">
+            <button class="btn btn-light filter-toggle-btn">
               <i class="bi bi-tag"></i> Đang giảm giá
             </button>
-            <button class="btn btn-light">
+            <button class="btn btn-light filter-toggle-btn">
               <i class="bi bi-graph-up"></i> Bán chạy
             </button>
 
@@ -253,12 +288,11 @@
           </div>
         </div>
 
-        <!-- SẮP XẾP -->
         <div
           class="d-flex flex-wrap justify-content-between align-items-center mb-3"
         >
           <h6 class="text-muted m-0 mt-1">Sắp xếp theo:</h6>
-          <div class="d-flex flex-wrap gap-2">
+          <div class="d-flex flex-wrap gap-2" id="sort-options">
             <button
               class="btn btn-outline-primary active"
               style="background-color: #e8f0fe; color: black"
@@ -278,7 +312,7 @@
         </div>
 
         <!-- DANH SÁCH SẢN PHẨM -->
-        <div class="row g-4 " data-aos="fade-up">
+        <div class="row g-4" data-aos="fade-up">
           <!-- Sản phẩm mẫu -->
           <!-- Card 1 -->
           <div class="col-md-3 col-6 d-flex">
@@ -598,6 +632,82 @@
     </script>
 
     <!-- JS đặt cuối để tránh lỗi -->
+
+    <script>
+      // Lấy ra container chứa các nút
+      const menuContainer = document.getElementById("quick-menu");
+      if (menuContainer) {
+        // Lấy ra tất cả các nút (button) trong container
+        const buttons = menuContainer.querySelectorAll("button");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // 1. Loại bỏ trạng thái 'active' và style đặc biệt khỏi tất cả các nút
+            buttons.forEach((btn) => {
+              btn.classList.remove("active");
+              // Đặt lại background-color về mặc định (hoặc rỗng)
+              btn.style.backgroundColor = "";
+            });
+
+            // 2. Thêm trạng thái 'active' và style đặc biệt cho nút vừa được click
+            this.classList.add("active");
+            // Gán màu nền đặc biệt cho nút active
+            this.style.backgroundColor = "#f89ac9";
+          });
+        });
+      }
+    </script>
+
+    <script>
+      // Lấy ra tất cả các nút có class 'filter-toggle-btn'
+      const filterButtons = document.querySelectorAll(".filter-toggle-btn");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Toggle class 'active': nếu đang active thì bỏ, nếu chưa active thì thêm
+          this.classList.toggle("active");
+
+          // Khi active:
+          if (this.classList.contains("active")) {
+            // Nếu nút đang active, chuyển nó thành btn-primary (hoặc btn-danger tùy bạn định nghĩa trong CSS)
+            // và bỏ btn-light để áp dụng màu nổi bật từ CSS/Bootstrap
+            this.classList.remove("btn-light");
+            this.classList.add("btn-primary"); // Hoặc sử dụng CSS bạn đã định nghĩa
+          } else {
+            // Khi không active:
+            // Đặt lại về trạng thái ban đầu: btn-light
+            this.classList.remove("btn-primary");
+            this.classList.add("btn-light");
+          }
+        });
+      });
+    </script>
+
+    <script>
+  // Lấy ra container chứa các nút Sắp xếp
+  const sortContainer = document.getElementById('sort-options');
+  if (sortContainer) {
+    // Lấy ra tất cả các nút (button) trong container
+    const sortButtons = sortContainer.querySelectorAll('button');
+
+    sortButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // 1. Loại bỏ trạng thái 'active' và style đặc biệt khỏi tất cả các nút
+        sortButtons.forEach(btn => {
+          btn.classList.remove('active');
+          // Xóa màu nền đặc biệt, giữ lại màu chữ đen đã có
+          btn.style.backgroundColor = '';
+        });
+
+        // 2. Thêm trạng thái 'active' và style đặc biệt cho nút vừa được click
+        this.classList.add('active');
+        // Gán màu nền đặc biệt (#e8f0fe) cho nút active
+        this.style.backgroundColor = '#e8f0fe';
+      });
+    });
+  }
+</script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="assets/js/hieuung.js"></script>

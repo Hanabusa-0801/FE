@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PK Store</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PK Store</title>
 
-  <!-- Bootstrap CSS + Icons -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-  />
+    <!-- Bootstrap CSS + Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
 
-  <!-- AOS + Custom CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+    <!-- AOS + Custom CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
   <body>
     <!-- header -->
     <div
-      class="container-fluid top-bar d-flex justify-content-between bg-light border-bottom"
+      class="container-fluid top-bar d-flex justify-content-between bg-light border-bottom d-md-inline d-none"
     >
-      <div class="icon-navbar mt-md-2 my-3">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-youtube"></i></a>
-        <a href="#"><i class="bi bi-behance"></i></a>
-      </div>
-      <div class="user-links text-dark pt-2 pb-2 d-flex flex-wrap ms-auto">
-        <a href="dangnhap.html" type="button" class="nut m-2 d-none d-md-block"
-          ><i class="bi bi-person-fill"></i> Tài khoản</a
-        >
-        <a href="giohang.html" type="button" class="nut m-2 d-none d-md-block"
-          ><i class="bi bi-bag-fill"></i> Giỏ hàng</a
-        >
+      <div class="row">
+        <div class="col-4">
+          <div class="icon-navbar ">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+        <div class="col-5"></div>
+        <div class="col-3 d-flex me-auto">
+          <div class="user-links text-dark pt-2 pb-2 d-flex ms-auto">
+            <a
+              href="dangnhap.html"
+              type="button"
+              class="nut mx-2 d-none d-md-block"
+              ><i class="bi bi-person-fill"></i> Tài khoản</a
+            >
+            <a
+              href="giohang.html"
+              type="button"
+              class="nut mx-2 d-none d-md-block"
+              ><i class="bi bi-bag-fill"></i> Giỏ hàng</a
+            >
+          </div>
+        </div>
       </div>
     </div>
     <!-- Navbar -->
@@ -129,6 +142,33 @@
               🔍
             </button>
           </form>
+
+          <div
+            class="container-fluid top-bar d-flex justify-content-between bg-light border-bottom d-md-none d-block"
+          >
+            <div class="icon-navbar mt-md-2 my-3">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-behance"></i></a>
+            </div>
+            <div
+              class="user-links text-dark pt-2 pb-2 d-flex flex-wrap ms-auto"
+            >
+              <a
+                href="dangnhap.html"
+                type="button"
+                class="nut m-2 d-none d-md-block"
+                ><i class="bi bi-person-fill"></i> Tài khoản</a
+              >
+              <a
+                href="giohang.html"
+                type="button"
+                class="nut m-2 d-none d-md-block"
+                ><i class="bi bi-bag-fill"></i> Giỏ hàng</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -353,7 +393,7 @@
     </div>
 
     <!-- Product Section 2 -->
-    <section class="py-3 bg-light text-center" >
+    <section class="py-3 bg-light text-center">
       <div class="container py-4" data-aos="fade-up">
         <h3 class="mb-4">Manwa</h3>
         <div class="row g-4">
@@ -462,7 +502,9 @@
     <section class="portfolio">
       <div class="container py-5">
         <div class="row g-3 align-items-center">
-          <div class="col-md-5 d-flex justify-content-center">
+          <div
+            class="col-md-5 d-flex justify-content-md-start justify-content-center"
+          >
             <img src="assets/images/tacgia1.jpg" class="img-fluid w-75" />
           </div>
           <div class="col-md-7">
@@ -489,21 +531,21 @@
           <div class="col-md-3">
             <img
               src="assets/images/ảnh truyện/sach22.jpg"
-              class="img-fluid container-sm"
+              class="img-fluid container-sm w-75"
               alt=""
             />
           </div>
           <div class="col-md-3">
             <img
               src="assets/images/ảnh truyện/sach20.jpg"
-              class="img-fluid container-sm"
+              class="img-fluid container-sm w-75"
               alt=""
             />
           </div>
           <div class="col-md-3">
             <img
               src="assets/images/ảnh truyện/sach24.jpg"
-              class="img-fluid container-sm"
+              class="img-fluid container-sm w-75"
               alt=""
             />
           </div>
@@ -626,8 +668,8 @@
       });
     </script>
     <!-- JS đặt cuối để tránh lỗi -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="assets/js/hieuung.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="assets/js/hieuung.js"></script>
   </body>
 </html>
